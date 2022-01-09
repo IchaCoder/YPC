@@ -1,13 +1,243 @@
+/** @format */
+
+:root {
+  --btn-bg: #5cbcff;
+  --font-red: #ff4500;
+  --font-blue: #149eff;
+  --gradient-light-blue: #74c6ff;
+  --gradient-deep-blue: #18a0ff;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.nav-flex {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-block: 1rem;
+}
+
+.menu-btn {
+  display: none;
+  margin-left: 2rem;
+}
+
+.menu-two {
+  display: grid;
+  margin-left: -3rem;
+  margin-top: 2.5rem;
+}
+
+.menu-btn div {
+  padding: 0.25rem;
+  width: 80px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+  display: grid;
+  place-items: start;
+  transition: all 0.5s ease-in-out;
+  margin-top: 0.5rem;
+}
+
+.menu-btn div:hover {
+  background: var(--btn-bg);
+}
+
+.active {
+  background: var(--btn-bg);
+}
+
+.logo {
+  margin-left: 20px;
+  font-weight: bold;
+  color: var(--font-red);
+  font-size: 20px;
+  margin-top: 0.5em;
+}
+
+.menuBtn {
+  display: grid;
+  justify-content: flex-end;
+  margin-right: -110px;
+  cursor: pointer;
+  animation: scaleMenu 1s linear infinite alternate;
+}
+
+.intro {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.vector {
+  width: 13rem;
+  height: 14rem;
+  position: absolute;
+  right: 0;
+}
+
+.intro .text {
+  margin-left: 20px;
+  font-size: 0.85rem;
+  margin-top: rem;
+  max-width: 60%;
+}
+
+.intro .text p {
+  color: var(--font-blue);
+  font-weight: bold;
+}
+
+.log-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logIn-modal {
+  box-shadow: 0px 0px 0px 15px var(--shadow);
+  border-radius: 10px;
+  background: white;
+  width: 13rem;
+  height: auto;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.menuBtn2 {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.menuBtn2:hover {
+  color: var(--font-red);
+}
+
+.hero2 {
+  margin-left: 0rem;
+  margin-top: 1em;
+  width: 14rem;
+  height: 14rem;
+}
+
+footer {
+  padding: 0.5rem;
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-deep-blue),
+    var(--gradient-light-blue)
+  );
+  margin-top: 2rem;
+  border-radius: 40px 40px 0 0;
+  line-height: 0;
+}
+footer section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+footer div {
+  display: grid;
+  justify-content: center;
+  margin-block: 1rem;
+}
+
+div h5 {
+  margin-block: 15px;
+}
+
+h4 {
+  margin-bottom: 0.25rem;
+}
+.social-icons {
+  display: grid;
+  grid-auto-flow: column;
+  margin-block: 2rem;
+  grid-gap: 1rem;
+  border-top: 1px solid var(--font-red);
+  padding-top: 2rem;
+  cursor: pointer;
+}
+
+@keyframes scaleMenu {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-btn {
+    display: flex;
+    margin-right: -20rem;
+  }
+  .menuBtn {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 10rem;
+  }
+  .menu-2 {
+    display: none;
+  }
+  .menu-btn div {
+    place-items: center;
+    margin-right: 0.25em;
+  }
+  .intro .text {
+    margin-left: 10rem;
+    font-size: 1rem;
+    margin-top: 10rem;
+    max-width: 30%;
+    line-height: 20px;
+  }
+
+  .intro .text p {
+    color: var(--font-blue);
+    font-weight: bold;
+  }
+
+  .vector {
+    width: 50rem;
+    height: 45rem;
+    position: absolute;
+    right: 0;
+  }
+
+  .hero2 {
+    width: 30rem;
+    height: 25rem;
+    margin-top: 7rem;
+  }
+
+  .social-icons {
+    justify-content: flex-end;
+  }
+
+  .social-icons svg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
 }
